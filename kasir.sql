@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2025 at 04:21 PM
+-- Generation Time: Apr 16, 2025 at 06:19 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -71,7 +71,6 @@ CREATE TABLE `kasir` (
 --
 
 INSERT INTO `kasir` (`id_kasir`, `nm_kasir`, `jenis_kelamin`, `no_telepon`, `agama`, `alamat`, `password`) VALUES
-('08765', 'Avin', 'Laki-Laki', '1234556', 'ML', 'turtle sama lord', 'abc123'),
 ('123456', 'aldi', 'Laki-Laki', '12345678', 'Islam', 'ctn 12', 'P@ssw0rd');
 
 -- --------------------------------------------------------
