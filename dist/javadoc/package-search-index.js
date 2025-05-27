@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"aplikasi_penjualan"},{"l":"koneksi"},{"l":"tampilan"}];updateSearchResults();
