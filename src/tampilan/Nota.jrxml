@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Nota" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="afbc6567-46f5-4c18-8c95-1ade823aed06">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="233"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="759"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<parameter name="id_nota" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT kasir.isi.id_nota,
+	kasir.isi.kd_brg,
+	kasir.isi.hb,
+	kasir.isi.hj,
+	kasir.isi.qty,
+	kasir.barang.hargajual,
+	kasir.barang.hargabeli,
+	kasir.barang.jenis,
+	kasir.barang.nm_brg,
+	kasir.barang.kd_brg,
+	kasir.nota.id_kasir,
+	kasir.nota.id_plgn,
+	kasir.nota.tgl_nota,
+	kasir.nota.id_nota,
+	kasir.kasir.id_kasir,
+	kasir.kasir.nm_kasir,
+	kasir.kasir.jenis_kelamin,
+	kasir.kasir.no_telepon,
+	kasir.kasir.agama,
+	kasir.kasir.password,
+	kasir.kasir.alamat,
+	kasir.pelanggan.alamat,
+	kasir.pelanggan.telepon,
+	kasir.pelanggan.jenis,
+	kasir.pelanggan.nmplgn,
+	kasir.pelanggan.id_plgn
+FROM kasir.isi
+	INNER JOIN kasir.nota ON 
+	 kasir.isi.id_nota = kasir.nota.id_nota 
+	INNER JOIN kasir.kasir ON 
+	 kasir.nota.id_kasir = kasir.kasir.id_kasir 
+	INNER JOIN kasir.pelanggan ON 
+	 kasir.nota.id_plgn = kasir.pelanggan.id_plgn 
+	INNER JOIN kasir.barang ON 
+	 kasir.isi.kd_brg = kasir.barang.kd_brg
+	 WHERE
+	 kasir.nota.id_nota=$P{id_nota}]]>
+	</queryString>
+	<field name="id_nota" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_nota"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_nota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="isi"/>
+	</field>
+	<field name="kd_brg" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kd_brg"/>
+		<property name="com.jaspersoft.studio.field.label" value="kd_brg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="isi"/>
+	</field>
+	<field name="hb" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="hb"/>
+		<property name="com.jaspersoft.studio.field.label" value="hb"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="isi"/>
+	</field>
+	<field name="hj" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="hj"/>
+		<property name="com.jaspersoft.studio.field.label" value="hj"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="isi"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="isi"/>
+	</field>
+	<field name="hargajual" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="hargajual"/>
+		<property name="com.jaspersoft.studio.field.label" value="hargajual"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="hargabeli" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="hargabeli"/>
+		<property name="com.jaspersoft.studio.field.label" value="hargabeli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="nm_brg" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nm_brg"/>
+		<property name="com.jaspersoft.studio.field.label" value="nm_brg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="COLUMN_10" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="kd_brg"/>
+		<property name="com.jaspersoft.studio.field.label" value="kd_brg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="barang"/>
+	</field>
+	<field name="id_kasir" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_kasir"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_kasir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="nota"/>
+	</field>
+	<field name="id_plgn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_plgn"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_plgn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="nota"/>
+	</field>
+	<field name="tgl_nota" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tgl_nota"/>
+		<property name="com.jaspersoft.studio.field.label" value="tgl_nota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="nota"/>
+	</field>
+	<field name="COLUMN_14" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_nota"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_nota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="nota"/>
+	</field>
+	<field name="COLUMN_15" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_kasir"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_kasir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="nm_kasir" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nm_kasir"/>
+		<property name="com.jaspersoft.studio.field.label" value="nm_kasir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="jenis_kelamin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis_kelamin"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis_kelamin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="no_telepon" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_telepon"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_telepon"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="agama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="agama"/>
+		<property name="com.jaspersoft.studio.field.label" value="agama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="password" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="password"/>
+		<property name="com.jaspersoft.studio.field.label" value="password"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="kasir"/>
+	</field>
+	<field name="COLUMN_22" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelanggan"/>
+	</field>
+	<field name="telepon" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telepon"/>
+		<property name="com.jaspersoft.studio.field.label" value="telepon"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelanggan"/>
+	</field>
+	<field name="COLUMN_24" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelanggan"/>
+	</field>
+	<field name="nmplgn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nmplgn"/>
+		<property name="com.jaspersoft.studio.field.label" value="nmplgn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelanggan"/>
+	</field>
+	<field name="COLUMN_26" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id_plgn"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_plgn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pelanggan"/>
+	</field>
+	<variable name="Sub_Total" class="java.lang.Integer" calculation="Sum"/>
+	<variable name="total" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{qty}*$F{hargajual}]]></variableExpression>
+	</variable>
+	<group name="id_nota">
+		<groupExpression><![CDATA[$F{id_nota}]]></groupExpression>
+	</group>
+	<group name="kd_brg">
+		<groupExpression><![CDATA[$F{kd_brg}]]></groupExpression>
+	</group>
+	<group name="hb">
+		<groupExpression><![CDATA[$F{hb}]]></groupExpression>
+	</group>
+	<group name="hj">
+		<groupExpression><![CDATA[$F{hj}]]></groupExpression>
+	</group>
+	<group name="qty">
+		<groupExpression><![CDATA[$F{qty}]]></groupExpression>
+	</group>
+	<group name="hargajual">
+		<groupExpression><![CDATA[$F{hargajual}]]></groupExpression>
+	</group>
+	<group name="hargabeli">
+		<groupExpression><![CDATA[$F{hargabeli}]]></groupExpression>
+	</group>
+	<group name="jenis">
+		<groupExpression><![CDATA[$F{jenis}]]></groupExpression>
+	</group>
+	<group name="nm_brg">
+		<groupExpression><![CDATA[$F{nm_brg}]]></groupExpression>
+	</group>
+	<group name="COLUMN_10">
+		<groupExpression><![CDATA[$F{COLUMN_10}]]></groupExpression>
+	</group>
+	<group name="id_kasir">
+		<groupExpression><![CDATA[$F{id_kasir}]]></groupExpression>
+	</group>
+	<group name="id_plgn">
+		<groupExpression><![CDATA[$F{id_plgn}]]></groupExpression>
+	</group>
+	<group name="tgl_nota">
+		<groupExpression><![CDATA[$F{tgl_nota}]]></groupExpression>
+	</group>
+	<group name="COLUMN_14">
+		<groupExpression><![CDATA[$F{COLUMN_14}]]></groupExpression>
+	</group>
+	<group name="COLUMN_15">
+		<groupExpression><![CDATA[$F{COLUMN_15}]]></groupExpression>
+	</group>
+	<group name="nm_kasir">
+		<groupExpression><![CDATA[$F{nm_kasir}]]></groupExpression>
+	</group>
+	<group name="jenis_kelamin">
+		<groupExpression><![CDATA[$F{jenis_kelamin}]]></groupExpression>
+	</group>
+	<group name="no_telepon">
+		<groupExpression><![CDATA[$F{no_telepon}]]></groupExpression>
+	</group>
+	<group name="agama">
+		<groupExpression><![CDATA[$F{agama}]]></groupExpression>
+	</group>
+	<group name="password">
+		<groupExpression><![CDATA[$F{password}]]></groupExpression>
+	</group>
+	<group name="alamat">
+		<groupExpression><![CDATA[$F{alamat}]]></groupExpression>
+	</group>
+	<group name="COLUMN_22">
+		<groupExpression><![CDATA[$F{COLUMN_22}]]></groupExpression>
+	</group>
+	<group name="telepon">
+		<groupExpression><![CDATA[$F{telepon}]]></groupExpression>
+	</group>
+	<group name="COLUMN_24">
+		<groupExpression><![CDATA[$F{COLUMN_24}]]></groupExpression>
+	</group>
+	<group name="nmplgn">
+		<groupExpression><![CDATA[$F{nmplgn}]]></groupExpression>
+	</group>
+	<group name="COLUMN_26">
+		<groupExpression><![CDATA[$F{COLUMN_26}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="10" width="230" height="60" uuid="2d8d34fd-cf37-4be7-a038-2fe9e73d59f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="30" uuid="bb119973-8cb1-4d8a-9efe-fbd2952cbffa"/>
+				<text><![CDATA[ID Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="100" height="30" uuid="647ac7f5-50e7-4e86-be4a-15f0c329e9d8"/>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="20" width="100" height="30" uuid="6814cd67-cf02-4fe1-9f28-629262f1e61e"/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="63" width="100" height="30" uuid="1491eb7e-1bbd-40f3-97ae-fb290b722c4f"/>
+				<text><![CDATA[Nama Kasir]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="20" width="100" height="30" uuid="8e4d36af-ba14-48a2-9f58-74da90ed91bd"/>
+				<textFieldExpression><![CDATA[$F{id_nota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="60" width="100" height="30" uuid="b53564a4-59a9-4ca0-80cd-6ea64ec1e82f"/>
+				<textFieldExpression><![CDATA[$F{nmplgn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="20" width="100" height="30" uuid="3e6a54d6-76ad-437b-a364-2a1f86a4da5d"/>
+				<textFieldExpression><![CDATA[$F{tgl_nota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="60" width="100" height="30" uuid="1299ca2a-e591-41df-85d0-5b3c1a232873"/>
+				<textFieldExpression><![CDATA[$F{nm_kasir}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<line>
+				<reportElement x="-20" y="0" width="595" height="1" forecolor="#666666" uuid="d5e22c82-ef05-49bd-8967-5af4be006b90"/>
+				<graphicElement>
+					<pen lineWidth="6.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="-20" y="50" width="595" height="1" forecolor="#666666" uuid="ac149003-f006-438f-9468-7a6410b9abd0"/>
+				<graphicElement>
+					<pen lineWidth="6.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="30" uuid="5f20a5fb-badf-43ac-9f7a-af830291e369"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="10" width="100" height="30" uuid="52b29417-e7f7-4085-ae38-14ed57c8ec01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="10" width="100" height="30" uuid="59bff104-e0e2-43ee-a66b-db94cb8d0c49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="10" width="100" height="30" uuid="d54bcd8f-2015-445a-ae94-bcd8cba52496"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="10" width="100" height="30" uuid="41dd5b9f-c0b3-4517-9602-d761796d6f08"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="11" width="100" height="30" uuid="bffa564d-530d-46d2-b5e1-f48570c5ce6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nm_brg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="10" width="100" height="30" uuid="ddbe062a-506b-473f-b4e9-4b2ba88b93e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="11" width="100" height="30" uuid="d28efb12-3afa-4da4-9a25-7266b4ee5873"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="10" width="100" height="30" uuid="90d46d0c-6c98-4e16-ae8c-665de6d0f42a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="350" y="0" width="100" height="30" uuid="0b851409-76ba-4d41-9927-b0c958e8674a"/>
+				<text><![CDATA[Total Belanja :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="0d8e29a8-aec2-48bd-a2c7-f790ac32d892"/>
+				<textFieldExpression><![CDATA[$V{Sub_Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
